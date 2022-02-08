@@ -1,6 +1,7 @@
 ﻿using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using System.Reflection;
 
 namespace FulminiBot
 {
@@ -21,8 +22,10 @@ namespace FulminiBot
 
 			RegisterCommands();
 
-			await Client.LoginAsync(TokenType.Bot, "OTM3NDQ5OTUwNDM3MDUyNDg5.Yfb6TQ.m57ADotItfr-1_kwXByPVM9YVCk");
+#pragma warning disable CS8604
+			await Client.LoginAsync(TokenType.Bot, Token.BotToken);
 			await Client.StartAsync();
+#pragma warning restore CS8604
 
 			await Task.Delay(-1);
 		}

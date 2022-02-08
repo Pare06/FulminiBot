@@ -19,8 +19,6 @@ namespace FulminiBot
 
 		private async Task MuteAuthorAsync(TimeSpan time)
 		{
-			await MessagePareAsync($"{DateTime.Now.Hour}/{DateTime.Now.Minute}/{DateTime.Now.Second} comando non implementato");
-
 			IRole role = Client.GetGuild(GuildId).GetRole(0 /* da aggiungere */ );
 			SocketGuildUser sgu = (SocketGuildUser)message.Author;
 			await sgu.AddRoleAsync(role);
@@ -29,7 +27,5 @@ namespace FulminiBot
 
 			await sgu.RemoveRoleAsync(role);
 		}
-
-		private async Task MessagePareAsync(string text) => await Client.GetUser(PareId).SendMessageAsync(text);
 	}
 }

@@ -7,7 +7,7 @@
 		private async Task HandleChatMessageAsync()
 		{
 			string[] keywords = { "cancro", "ronaldo" };
-			Command[] commands = Commands();
+			Command[] commands = Commands(); // si capisce comunque meglio delle lezioni della scamuzzi
 
 			for (int i = 0; i < keywords.Length; i++)
 			{
